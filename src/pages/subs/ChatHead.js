@@ -8,9 +8,13 @@ export default function ChatHead() {
         <Link className={`user`}>
           <img src="https://placeimg.com/50/50/people" />
         </Link>
+        <div className={`meta`}>
+          <h2 className={`name s14`}>Himanshu</h2>
+          <h2 className={`status s12 c777`}>Last Online 6 minute ago </h2>
+        </div>
       </div>
       <div className={`actions rel flex aic`}>
-        <button className={`icon-chat s24`} />
+        <button className={`icon-attach_file s24`} />
         <button className={`icon-more_vert s24`} />
       </div>
     </div>

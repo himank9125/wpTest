@@ -24,7 +24,7 @@ body {
   border-radius: 3px;
 
   .inbox {
-    width: 350px;
+    width: 450px;
     border-right: 1px #ddd solid;
     .userbox {
       background: #f3f3f3;
@@ -149,6 +149,9 @@ body {
             border-radius: 50%;
           }
         }
+        .meta {
+          margin-left: 10px;
+        }
       }
       .actions {
         flex: 1;
@@ -168,6 +171,77 @@ body {
       border-top: 1px solid #ddd;
       border-bottom: 1px solid #ddd;
       flex: 1;
+      background: #e4dbd4;
+      padding: 20px 30px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      .bubble {
+        flex: 1;
+        margin: 3px 0px;
+        .ballon {
+          background: #fff;
+          display: table;
+          padding: 7px 60px 7px 10px;
+          border-radius: 8px;
+          max-width: 75%;
+          .stamp {
+            bottom: 7px;
+            right: 7px;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: -10px;
+            bottom: 4px;
+            z-index: 1;
+            background: #fff;
+            border-radius: 20px;
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            left: -15px;
+            bottom: 9px;
+            z-index: 1;
+            background: #e4dbd4;
+            border-radius: 20px;
+          }
+        }
+        &.mine {
+          justify-content: flex-end;
+          .ballon {
+            background: #d9fdd3;
+            &::before {
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              left: auto;
+              right: -10px;
+              bottom: 4px;
+              z-index: 1;
+              background: #d9fdd3;
+              border-radius: 20px;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              width: 15px;
+              height: 15px;
+              left: auto;
+              right: -15px;
+              bottom: 9px;
+              z-index: 1;
+              background: #e4dbd4;
+              border-radius: 20px;
+            }
+          }
+        }
+      }
     }
     .sendbox {
       background: #f3f3f3;
