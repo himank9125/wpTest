@@ -7,14 +7,45 @@ $mbr: 4px;
   font-family: "Open Sans", sans-serif;
 }
 body {
-  background: #f0f2f5;
+  // background: #f0f2f5;
   font-family: "Open Sans", sans-serif;
+}
+.input {
+  border: 1px solid #ddd;
+  padding: 0px 8px 0px 4px;
+  height: 40px;
+}
+.button {
+  border: 0px;
+  background: $themecolor;
+  padding: 4px 10px;
+  height: 39px;
 }
 .splash {
   height: 400px;
   width: 400px;
 }
-
+.auth {
+  background: #fff;
+  width: 700px;
+  margin: 100px auto 50px auto;
+  padding: 50px;
+  .title {
+    margin-bottom: 7px;
+  }
+  .signin {
+    margin-top: 25px;
+    .input {
+      margin-right: 6px;
+      &.phone {
+        width: 300px;
+      }
+    }
+  }
+  .button {
+    margin-top: 10px;
+  }
+}
 .green-belt {
   background: #00a884;
   height: 15vh;

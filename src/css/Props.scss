@@ -152,6 +152,9 @@ input {
   top: 50%;
   transform: translateY(-50%);
 }
+.bl {
+  display: block;
+}
 .fixed {
   position: fixed;
   &.fill {

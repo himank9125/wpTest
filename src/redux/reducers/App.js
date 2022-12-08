@@ -1,6 +1,7 @@
 let inetialState = {
   debug: true,
   loaded: true,
+  session: false,
 };
 const reducer = (state = inetialState, action) => {
   switch (action.type) {

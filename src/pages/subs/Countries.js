@@ -1,4 +1,4 @@
-export const Countries = [
+const Countries = [
   {
     name: "Afghanistan",
     Iso: "+93",
@@ -1230,3 +1230,4 @@ export const Countries = [
     countryCode: "ZW",
   },
 ];
+export default Countries;
