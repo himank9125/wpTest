@@ -2,7 +2,7 @@ import React from "react";
 import Countries from "./subs/Countries";
 
 export default function Signin() {
-  const authVew = () => {
+  const authView = () => {
     return (
       <div className={`auth rel`}>
         <h2 className={`s20 font title b`}>Sign in to Whatsapp</h2>
@@ -30,7 +30,7 @@ export default function Signin() {
       </div>
     );
   };
-  const verifyVew = () => {
+  const verifyView = () => {
     return (
       <div className={`auth rel`}>
         <h2 className={`s20 font title b`}>Verify Phone Number</h2>
@@ -49,5 +49,5 @@ export default function Signin() {
       </div>
     );
   };
-  return verifyVew();
+  return verifyView();
 }

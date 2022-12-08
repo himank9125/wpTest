@@ -2,7 +2,7 @@ import React from "react";
 
 export default function ChatBubble(props) {
   const media = props.elm.media;
-  console.log(media);
+
   let GetMedia = () => {
     if (media) {
       return (
