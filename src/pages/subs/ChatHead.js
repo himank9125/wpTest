@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ChatHead() {
+export default function ChatHead(props) {
+  const data = props.data;
   return (
     <div className={`chathead flex`}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
-          <img src="https://placeimg.com/50/50/people" />
+          <img src={data.dp} />
         </Link>
         <div className={`meta`}>
-          <h2 className={`name s14`}>Himanshu</h2>
-          <h2 className={`status s12 c777`}>Last Online 6 minute ago </h2>
+          <h2 className={`name s14`}>{data.name}</h2>
+          <h2 className={`status s12 c777`}>{data.status} </h2>
         </div>
       </div>
       <div className={`actions rel flex aic`}>

@@ -148,7 +148,10 @@ input {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
+.aby {
+  top: 50%;
+  transform: translateY(-50%);
+}
 .fixed {
   position: fixed;
   &.fill {
@@ -171,6 +174,9 @@ input {
 }
 .rel {
   position: relative;
+}
+@mixin blur($amt: 2) {
+  filter: blur($amt);
 }
 .b {
   font-weight: 600;
@@ -201,6 +207,9 @@ input {
 }
 .s16 {
   font-size: 16px;
+}
+.s20 {
+  font-size: 20px;
 }
 .s24 {
   font-size: 24px;

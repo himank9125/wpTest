@@ -1,6 +1,6 @@
 let inetialState = {
   debug: true,
-  loaded: false,
+  loaded: true,
 };
 const reducer = (state = inetialState, action) => {
   switch (action.type) {

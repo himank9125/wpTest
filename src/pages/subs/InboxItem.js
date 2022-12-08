@@ -1,10 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function InboxItem() {
+export default function InboxItem(props) {
   return (
-    <div className={`conversation flex rel aic`}>
-      {" "}
+    <div key={props.idx} className={`conversation flex rel aic`}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
           <img
