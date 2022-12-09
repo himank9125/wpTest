@@ -8,6 +8,7 @@ export default function InboxItem(props) {
         <Link className={`user`}>
           <img
             src={`https://placeimg.com/50/50/people?t=${new Date().getTime()}`}
+            alt="myPhoto"
           />
         </Link>
       </div>
