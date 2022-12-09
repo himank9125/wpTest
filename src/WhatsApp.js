@@ -5,7 +5,7 @@ import Splash from "./pages/Splash";
 import { useDispatch, useSelector } from "react-redux";
 import Signin from "./pages/Signin";
 
-export default function ZuzApp() {
+export default function WhatsApp() {
   const load = useSelector((state) => state.myReducer);
 
   return (
