@@ -5,14 +5,14 @@ import SearchBox from "./subs/SearchBox";
 import UserBox from "./subs/UserBox";
 
 export default function Inbox() {
-  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  let arr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
   return (
     <div className={`inbox rel flex col`}>
       <UserBox />
       <SearchBox />
       <div className={`conv-list rel`}>
         {arr.map((elm, idx) => {
-          return <InboxItem idx={idx} />;
+          return <InboxItem key={idx} />;
         })}
       </div>
     </div>

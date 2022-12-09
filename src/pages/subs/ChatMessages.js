@@ -7,7 +7,7 @@ export default function ChatMessages(props) {
   return (
     <div className={`chat rel flex col`}>
       {arr.map((elm, idx) => {
-        return <ChatBubble dir={idx % 2} elm={elm} data={data} idx={idx} />;
+        return <ChatBubble dir={idx % 2} elm={elm} data={data} key={idx} />;
       })}
     </div>
   );

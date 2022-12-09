@@ -54,8 +54,14 @@ const inetialstate = {
 };
 const reducer = (state = inetialstate, action) => {
   switch (action.type) {
-    case "CHAT_STATE": {
-      return { ...state, ...action };
+    case "send": {
+      return {
+        ...state,
+        chats: [
+          ...state.chats,
+          { ID: 7, uid: 1, text: action.msg, media: null },
+        ],
+      };
     }
     default: {
       return state;

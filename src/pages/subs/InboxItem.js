@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function InboxItem(props) {
   return (
-    <div key={props.idx} className={`conversation flex rel aic`}>
+    <div className={`conversation flex rel aic`}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
           <img

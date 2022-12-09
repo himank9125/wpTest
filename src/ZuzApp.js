@@ -7,11 +7,7 @@ import Signin from "./pages/Signin";
 
 export default function ZuzApp() {
   const load = useSelector((state) => state.myReducer);
-  // const dispatch = useDispatch();
-  // setTimeout(() => {
-  //   dispatch({ type: "update" });
-  // }, 1000);
-  console.log(`ZuzApp${load}`);
+
   return (
     <BrowserRouter>
       {/* {load.loaded ? (
@@ -26,7 +22,8 @@ export default function ZuzApp() {
         <Splash />
       )} */}
       {/* <Signin /> */}
-      <Messenger />
+      {load.loaded && load.session ? <Messenger /> : <Signin />}
+      {/* <Messenger /> */}
     </BrowserRouter>
   );
 }
