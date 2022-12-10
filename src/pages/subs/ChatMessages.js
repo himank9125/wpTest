@@ -4,7 +4,15 @@ import ChatBubble from "./ChatBubble";
 
 export default function ChatMessages(props) {
   const selector = useSelector((state) => state.myReducer);
-  const arr = props.data;
+  const searchedData = props.data;
+  let arr = searchedData.filter(
+    (elm) =>
+      (elm.sender === selector.currentuser &&
+        elm.receiver === selector.activeuser) ||
+      (elm.receiver === selector.currentuser &&
+        elm.sender === selector.activeuser)
+  );
+
   return (
     <div className={`chat rel flex col`}>
       {arr.map((elm, idx) => {

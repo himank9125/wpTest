@@ -1,14 +1,14 @@
 const inetialstate = {
-  user: {
-    ID: 1,
-    dp: `https://placeimg.com/50/50/people?${new Date().getTime()}`,
-    name: "Sachin",
-    status: "last seen 5 minutes ago",
-  },
+  // user: {
+  //   ID: 1,
+  //   dp: `https://placeimg.com/50/50/people?${new Date().getTime()}`,
+  //   name: "Sachin",
+  //   status: "last seen 5 minutes ago",
+  // },
   chats: [
     {
-      sender: "1234567890",
-      uid: 1,
+      sender: "99350123456",
+      receiver: 1,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: {
         type: "image",
@@ -16,8 +16,8 @@ const inetialstate = {
       },
     },
     {
-      sender: "1234567890",
-      uid: 1,
+      sender: "99350123456",
+      receiver: 1,
       text: null,
       media: {
         type: "audio",
@@ -25,8 +25,8 @@ const inetialstate = {
       },
     },
     {
-      sender: "1234567890",
-      uid: 1,
+      sender: "99350123456",
+      receiver: 1,
       text: null,
       media: {
         type: "video",
@@ -35,14 +35,14 @@ const inetialstate = {
       },
     },
     {
-      sender: "1234567890",
-      uid: 1,
+      sender: "99350123456",
+      receiver: 1,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: null,
     },
     {
-      sender: "1234567890",
-      uid: 1,
+      sender: "99350123456",
+      receiver: 1,
       text: "Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and ",
       media: {
         type: "video",
@@ -62,7 +62,12 @@ const reducer = (state = inetialstate, action) => {
         ...state,
         chats: [
           ...state.chats,
-          { sender: action.sender, uid: 1, text: action.msg, media: null },
+          {
+            sender: action.sender,
+            receiver: action.receiver,
+            text: action.msg,
+            media: null,
+          },
         ],
       };
     }

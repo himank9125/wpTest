@@ -41,7 +41,12 @@ export default function ChatSendBox() {
 
   const sendData = (evt) => {
     if (evt.key === "Enter") {
-      dispatch({ type: "send", msg: msg, sender: selector.currentuser });
+      dispatch({
+        type: "send",
+        msg: msg,
+        sender: selector.currentuser,
+        receiver: selector.activeuser,
+      });
       setMsg("");
     }
   };
