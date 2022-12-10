@@ -40,7 +40,7 @@ export default function Signin() {
     codeSent.confirmation
       .confirm(otp)
       .then((res) => {
-        dispatch({ type: "update" });
+        dispatch({ type: "update", phone: phone });
       })
       .catch((err) => {
         console.log(err);

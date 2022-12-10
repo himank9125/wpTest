@@ -6,7 +6,7 @@ export default function UserBox() {
     <div className={`userbox flex`}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
-          <img src="https://placeimg.com/50/50/people" />
+          <img src="https://placeimg.com/50/50/people" alt="wp" />
         </Link>
       </div>
       <div className={`actions rel flex aic`}>

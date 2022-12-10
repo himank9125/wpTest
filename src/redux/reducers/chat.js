@@ -2,12 +2,12 @@ const inetialstate = {
   user: {
     ID: 1,
     dp: `https://placeimg.com/50/50/people?${new Date().getTime()}`,
-    name: "himalaya",
+    name: "Sachin",
     status: "last seen 5 minutes ago",
   },
   chats: [
     {
-      ID: 1,
+      sender: "1234567890",
       uid: 1,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: {
@@ -16,7 +16,7 @@ const inetialstate = {
       },
     },
     {
-      ID: 2,
+      sender: "1234567890",
       uid: 1,
       text: null,
       media: {
@@ -25,7 +25,7 @@ const inetialstate = {
       },
     },
     {
-      ID: 3,
+      sender: "1234567890",
       uid: 1,
       text: null,
       media: {
@@ -35,13 +35,13 @@ const inetialstate = {
       },
     },
     {
-      ID: 4,
+      sender: "1234567890",
       uid: 1,
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: null,
     },
     {
-      ID: 5,
+      sender: "1234567890",
       uid: 1,
       text: "Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and ",
       media: {
@@ -59,7 +59,7 @@ const reducer = (state = inetialstate, action) => {
         ...state,
         chats: [
           ...state.chats,
-          { ID: 7, uid: 1, text: action.msg, media: null },
+          { sender: action.sender, uid: 1, text: action.msg, media: null },
         ],
       };
     }

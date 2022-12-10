@@ -40,7 +40,7 @@ export default function ChatBubble(props) {
                 </div>
               </div>
               <div className={`udp`}>
-                <img src={props.data.user.dp} />
+                <img src="https://placeimg.com/50/50/people" alt="wp" />
               </div>
             </div>
           )}
@@ -56,7 +56,7 @@ export default function ChatBubble(props) {
     >
       <div className={`ballon rel`}>
         {media?.type != "audio" && (
-          <h2 className={`user s13 b`}>{props.data.user.name}</h2>
+          <h2 className={`user s13 b`}>{props.elm.sender}</h2>
         )}
         {GetMedia()}
         {props.elm.text && <p className={`text s13`}>{props.elm.text}</p>}

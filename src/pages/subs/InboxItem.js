@@ -1,9 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 
 export default function InboxItem(props) {
+  const dispatch = useDispatch();
+  const setactiveuser = () => {
+    dispatch({ type: "setactive", user: props.elm });
+  };
   return (
-    <div className={`conversation flex rel aic`}>
+    <div className={`conversation flex rel aic`} onClick={setactiveuser}>
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
           <img
@@ -14,8 +19,8 @@ export default function InboxItem(props) {
       </div>
       <div className={`meta rel flex aic`}>
         <div className={`info rel flex col`}>
-          <h2 className={`name s14 wordwrap`}>Himanshu</h2>
-          <h2 className={`last-msg s13 c333 wordwrap`}>This is message</h2>
+          <h2 className={`name s14 wordwrap`}>{props.elm}</h2>
+          <h2 className={`last-msg s13 c333 wordwrap`}>Last Message Here</h2>
         </div>
         <div className={`extra rel flex col aic`}>
           <h2 className={`stamp s11 c777`}>01:45 AM</h2>

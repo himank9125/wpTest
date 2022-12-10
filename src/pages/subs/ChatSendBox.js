@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function ChatSendBox() {
+  const selector = useSelector((state) => state.myReducer);
   const dispatch = useDispatch();
   const [msg, setMsg] = useState("");
   const sendData = (evt) => {
     if (evt.key === "Enter") {
-      dispatch({ type: "send", msg: msg });
+      dispatch({ type: "send", msg: msg, sender: selector.currentuser });
       setMsg("");
     }
   };
