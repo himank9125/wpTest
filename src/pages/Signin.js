@@ -17,7 +17,36 @@ export default function Signin() {
 
   const codeSent = useSelector((state) => state.myReducer);
   const dispatch = useDispatch();
-
+  // ----------------------Fetching and Synching---------------------
+  let fetching = () => {
+    let url = "https://whatsapp-7547d-default-rtdb.firebaseio.com/users.json";
+    fetch(url)
+      .then((elm) => elm.json())
+      .then((elm) => {
+        console.log("fetching" + elm);
+        dispatch({ type: "sync", data: elm.users });
+      })
+      .catch((err) => console.log(err));
+  };
+  let sending = () => {
+    let url = "https://whatsapp-7547d-default-rtdb.firebaseio.com/users.json";
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ users: codeSent.users }),
+    };
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+  let syncing = () => {
+    fetching();
+    dispatch({ type: "update", phone: phone });
+  };
+  useEffect(() => {
+    sending();
+  }, [codeSent]);
+  // ----------------------Fetching and Synching---------------------
   useEffect(() => {
     window.recaptcha = new RecaptchaVerifier("captcha", {}, auth);
     window.recaptcha.render().then((widget) => {
@@ -40,7 +69,7 @@ export default function Signin() {
     codeSent.confirmation
       .confirm(otp)
       .then((res) => {
-        dispatch({ type: "update", phone: phone });
+        syncing();
       })
       .catch((err) => {
         console.log(err);
@@ -77,7 +106,7 @@ export default function Signin() {
             onChange={(event) => setPhone(event.target.value)}
           />
         </div>
-        <div className={`captcha`} id={`captcha`}></div>
+        <div className={`captchas`} id={`captcha`}></div>
         <button className={`button s15 font b cfff`} onClick={signing}>
           Continue
         </button>

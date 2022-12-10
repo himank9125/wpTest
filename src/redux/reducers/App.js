@@ -8,6 +8,16 @@ let inetialState = {
 };
 const reducer = (state = inetialState, action) => {
   switch (action.type) {
+    // case "updateusers": {
+    //   let arr = [
+    //     ...state.users.filter((elm) => elm !== action.phone),
+    //     action.phone,
+    //   ];
+    //   return { ...state, users: arr };
+    // }
+    case "sync": {
+      return { ...state, users: action.data };
+    }
     case "setactive": {
       return { ...state, activeuser: action.user };
     }

@@ -1,10 +1,43 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function ChatSendBox() {
   const selector = useSelector((state) => state.myReducer);
+  const codeSent = useSelector((state) => state.chatReducer);
   const dispatch = useDispatch();
   const [msg, setMsg] = useState("");
+  // ----------------------Fetching and Synching---------------------
+  let fetching = () => {
+    let url =
+      "https://whatsapp-7547d-default-rtdb.firebaseio.com/messages.json";
+    fetch(url)
+      .then((elm) => elm.json())
+      .then((elm) => {
+        console.log("fetching" + elm);
+        // -----------------
+      })
+      .catch((err) => console.log(err));
+  };
+  let sending = () => {
+    let url =
+      "https://whatsapp-7547d-default-rtdb.firebaseio.com/messages.json";
+    const requestOptions = {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(codeSent),
+    };
+    fetch(url, requestOptions)
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  };
+  useEffect(() => {
+    fetching();
+  });
+  useEffect(() => {
+    sending();
+  }, [msg]);
+  // ----------------------Fetching and Synching---------------------
+
   const sendData = (evt) => {
     if (evt.key === "Enter") {
       dispatch({ type: "send", msg: msg, sender: selector.currentuser });

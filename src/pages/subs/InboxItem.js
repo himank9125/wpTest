@@ -12,7 +12,9 @@ export default function InboxItem(props) {
       <div className={`you rel flex aic`}>
         <Link className={`user`}>
           <img
-            src={`https://placeimg.com/50/50/people?t=${new Date().getTime()}`}
+            src={`https://placeimg.com/50/50/people?t=${Math.trunc(
+              Math.random() * 100
+            )}`}
             alt="myPhoto"
           />
         </Link>
