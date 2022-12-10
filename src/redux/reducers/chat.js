@@ -1,14 +1,8 @@
 const inetialstate = {
-  // user: {
-  //   ID: 1,
-  //   dp: `https://placeimg.com/50/50/people?${new Date().getTime()}`,
-  //   name: "Sachin",
-  //   status: "last seen 5 minutes ago",
-  // },
   chats: [
     {
-      sender: "99350123456",
-      receiver: 1,
+      sender: "8888888888",
+      receiver: "8009594610",
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: {
         type: "image",
@@ -16,8 +10,8 @@ const inetialstate = {
       },
     },
     {
-      sender: "99350123456",
-      receiver: 1,
+      sender: "8888888888",
+      receiver: "8009594610",
       text: null,
       media: {
         type: "audio",
@@ -25,8 +19,8 @@ const inetialstate = {
       },
     },
     {
-      sender: "99350123456",
-      receiver: 1,
+      sender: "8888888888",
+      receiver: "8009594610",
       text: null,
       media: {
         type: "video",
@@ -35,14 +29,14 @@ const inetialstate = {
       },
     },
     {
-      sender: "99350123456",
-      receiver: 1,
+      sender: "8888888888",
+      receiver: "8009594610",
       text: "Lorem Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and typesetting",
       media: null,
     },
     {
-      sender: "99350123456",
-      receiver: 1,
+      sender: "8888888888",
+      receiver: "8009594610",
       text: "Ipsum is simply dummy text of the printing and typesetting Lorem Ipsum is simply dummy text of the printing and ",
       media: {
         type: "video",

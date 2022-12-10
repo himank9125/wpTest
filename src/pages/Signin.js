@@ -84,7 +84,7 @@ export default function Signin() {
         <h2 className={`s20 font title b`}>Sign in to Whatsapp</h2>
         <h2 className={`s15 font slogan`}>
           Enter your phone number. We will verify your number by sending a
-          verificatopn code
+          verification code
         </h2>
         <div className={`signin`}>
           <select
