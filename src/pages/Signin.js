@@ -28,24 +28,26 @@ export default function Signin() {
       })
       .catch((err) => console.log(err));
   };
-  let sending = () => {
-    let url = "https://whatsapp-7547d-default-rtdb.firebaseio.com/users.json";
-    const requestOptions = {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ users: codeSent.users }),
-    };
-    fetch(url, requestOptions)
-      .then((response) => response.json())
-      .then((data) => console.log(data));
-  };
-  let syncing = () => {
-    fetching();
-    dispatch({ type: "update", phone: phone });
-  };
+  //-------------------------------------------
+  // let sending = () => {
+  //   let url = "https://whatsapp-7547d-default-rtdb.firebaseio.com/users.json";
+  //   const requestOptions = {
+  //     method: "PUT",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify({ users: codeSent.users }),
+  //   };
+  //   fetch(url, requestOptions)
+  //     .then((response) => response.json())
+  //     .then((data) => console.log(data));
+  // };
+  //---------------------------------
   useEffect(() => {
-    sending();
-  }, [codeSent]);
+    fetching();
+  }, []);
+  //-------------------------------------
+  // useEffect(() => {
+  //   sending();
+  // }, [codeSent]);
   // ----------------------Fetching and Synching---------------------
   useEffect(() => {
     window.recaptcha = new RecaptchaVerifier("captcha", {}, auth);
@@ -69,7 +71,7 @@ export default function Signin() {
     codeSent.confirmation
       .confirm(otp)
       .then((res) => {
-        syncing();
+        dispatch({ type: "update", phone: phone });
       })
       .catch((err) => {
         console.log(err);

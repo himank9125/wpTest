@@ -54,6 +54,9 @@ const inetialstate = {
 };
 const reducer = (state = inetialstate, action) => {
   switch (action.type) {
+    case "syncdata": {
+      return action.data;
+    }
     case "send": {
       return {
         ...state,

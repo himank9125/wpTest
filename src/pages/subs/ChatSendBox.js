@@ -13,8 +13,8 @@ export default function ChatSendBox() {
     fetch(url)
       .then((elm) => elm.json())
       .then((elm) => {
-        console.log("fetching" + elm);
-        // -----------------
+        console.log("fetching", elm);
+        dispatch({ type: "syncdata", data: elm });
       })
       .catch((err) => console.log(err));
   };
@@ -26,16 +26,17 @@ export default function ChatSendBox() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(codeSent),
     };
+    console.log(requestOptions);
     fetch(url, requestOptions)
       .then((response) => response.json())
       .then((data) => console.log(data));
   };
   useEffect(() => {
     fetching();
-  });
+  }, []);
   useEffect(() => {
     sending();
-  }, [msg]);
+  }, [codeSent]);
   // ----------------------Fetching and Synching---------------------
 
   const sendData = (evt) => {
