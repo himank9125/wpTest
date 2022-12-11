@@ -40,8 +40,10 @@ export default function ChatSendBox() {
     console.log("msg fetching");
   }, []);
   useEffect(() => {
-    sending();
-    console.log("msg sending");
+    setTimeout(() => {
+      sending();
+      console.log("msg sending");
+    }, 2000);
   }, [retdata]);
   // ----------------------Fetching and Synching---------------------
 
