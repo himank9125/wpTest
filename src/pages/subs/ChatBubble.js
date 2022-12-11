@@ -62,7 +62,7 @@ export default function ChatBubble(props) {
         {props.elm.text && <p className={`text s13`}>{props.elm.text}</p>}
         {media?.type != "audio" && (
           <h2 className={`stamp s12 abs c${props.elm.text ? 777 : "fff"}`}>
-            03:22 AM
+            {props.elm.time}
           </h2>
         )}
       </div>
