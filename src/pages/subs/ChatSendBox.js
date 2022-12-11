@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 export default function ChatSendBox() {
   const selector = useSelector((state) => state.myReducer);
   const codeSent = useSelector((state) => state.chatReducer);
+  const [retdata, setRetData] = useState("");
   const dispatch = useDispatch();
   const [msg, setMsg] = useState("");
   // ----------------------Fetching and Synching---------------------
@@ -29,14 +30,19 @@ export default function ChatSendBox() {
     console.log(requestOptions);
     fetch(url, requestOptions)
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        fetching();
+        console.log("sending Done fetching started");
+      });
   };
   useEffect(() => {
     fetching();
+    console.log("msg fetching");
   }, []);
   useEffect(() => {
     sending();
-  }, [codeSent]);
+    console.log("msg sending");
+  }, [retdata]);
   // ----------------------Fetching and Synching---------------------
 
   const sendData = (evt) => {
@@ -47,6 +53,7 @@ export default function ChatSendBox() {
         sender: selector.currentuser,
         receiver: selector.activeuser,
       });
+      setRetData(new Date());
       setMsg("");
     }
   };
